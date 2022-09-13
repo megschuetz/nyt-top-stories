@@ -7,7 +7,7 @@ function AllStoriesList({ allStories }) {
   const createPreviews = allStories.map(story => <StoryPreview story={story} />)
 
  return (
-  <div>
+  <div className='previews-container'>
     {createPreviews}
   </div>
  )
