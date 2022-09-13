@@ -18,3 +18,8 @@ img {
 .section {
   text-transform: capitalize;
 }
+
+.details {
+  padding: 2%;
+  padding-bottom: 4%;
+}
