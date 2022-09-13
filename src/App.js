@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './App.css';
-import {allData} from './apiCalls'
+import { allData } from './apiCalls'
 import AllStoriesList from './AllStoriesList'
+import Details from './Details';
 import { Route } from 'react-router-dom'
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       .then(data => setAllStories(data.results))
       .catch(error => setError(error))
 
-      console.log('allstories', allStories)
+      // console.log('allstories', allStories)
   })
 
   return (
@@ -26,6 +27,14 @@ function App() {
       <Route exact path='/'>
         {allStories && <AllStoriesList allStories={allStories}/>}
       </Route>
+
+      <Route path="/:published_date" render={({ match }) => {
+        return (
+        <div>
+          {allStories && <Details pubDate={match.params.published_date} allStories={allStories}/>}
+        </div>
+        )
+        }}/>
     </div>
   );
 }

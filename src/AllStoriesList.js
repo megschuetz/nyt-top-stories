@@ -4,7 +4,7 @@ import StoryPreview from './StoryPreview'
 
 function AllStoriesList({ allStories }) {
 
-  const createPreviews = allStories.map(story => <StoryPreview story={story} />)
+  const createPreviews = allStories.map(story => <StoryPreview key={story.title} story={story} />)
 
  return (
   <div className='previews-container'>
