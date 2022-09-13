@@ -1,6 +1,7 @@
 import React from 'react'
 import './StoryPreview.css'
 import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 function StoryPreview({ story }) {
   return (
@@ -15,3 +16,7 @@ function StoryPreview({ story }) {
 }
 
 export default StoryPreview
+
+StoryPreview.propType = {
+  story: PropTypes.object
+}

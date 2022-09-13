@@ -1,5 +1,6 @@
 import React from 'react'
 import './Details.css'
+import PropTypes from 'prop-types'
 
 function Details({ pubDate, allStories }) {
 
@@ -18,3 +19,8 @@ function Details({ pubDate, allStories }) {
 }
 
 export default Details
+
+Details.propTypes = {
+  pubDate: PropTypes.string,
+  allStories: PropTypes.array
+}
