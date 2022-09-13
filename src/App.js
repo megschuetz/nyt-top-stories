@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react'
 import './App.css';
+import allData from 'apiCalls.js'
 
 function App() {
+
+  const [allStories, setAllStories] = useState('')
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    allData
+      .then(data => setAllStories(data))
+      .catch(error => setError(error))
+
+      console.log('allstories', allStories)
+  });
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <h1>New York Times Top Stories</h1>
       </header>
+
     </div>
   );
 }
