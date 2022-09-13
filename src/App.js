@@ -4,10 +4,11 @@ import { allData } from './apiCalls'
 import AllStoriesList from './AllStoriesList'
 import Details from './Details';
 import { Route } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 function App() {
 
-  const [allStories, setAllStories] = useState('')
+  const [allStories, setAllStories] = useState([])
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -40,3 +41,8 @@ function App() {
 }
 
 export default App;
+
+App.propTypes = {
+  allStories: PropTypes.array,
+  error: PropTypes.string
+}

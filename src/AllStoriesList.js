@@ -1,6 +1,7 @@
 import React from 'react'
 import './AllStoriesList.css'
 import StoryPreview from './StoryPreview'
+import PropTypes from 'prop-types'
 
 function AllStoriesList({ allStories }) {
 
@@ -14,3 +15,7 @@ function AllStoriesList({ allStories }) {
 }
 
 export default AllStoriesList
+
+AllStoriesList.propType = {
+  allStories: PropTypes.array
+}
