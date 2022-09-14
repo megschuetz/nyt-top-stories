@@ -1,6 +1,6 @@
-const fetchResponse = (url) => {
+const fetchResponse = (section) => {
  return (
-  fetch(url)
+  fetch(`https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=sNldn0GkKnLZK6hqbyG21AAiNPiXKhX4`)
     .then((response) => {
       if (response.ok) {
         return response.json()
@@ -10,6 +10,6 @@ const fetchResponse = (url) => {
   )
 } 
 
-const allData = fetchResponse(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=sNldn0GkKnLZK6hqbyG21AAiNPiXKhX4`)
+const topStories = fetchResponse('home')
 
-export { allData }
+export { topStories, fetchResponse }

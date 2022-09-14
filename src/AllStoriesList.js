@@ -3,9 +3,9 @@ import './AllStoriesList.css'
 import StoryPreview from './StoryPreview'
 import PropTypes from 'prop-types'
 
-function AllStoriesList({ allStories }) {
+function AllStoriesList({ stories }) {
 
-  const createPreviews = allStories.map(story => <StoryPreview key={story.title} story={story} />)
+  const createPreviews = stories.map(story => <StoryPreview key={story.title} story={story} />)
 
  return (
   <div className='previews-container'>
@@ -17,5 +17,5 @@ function AllStoriesList({ allStories }) {
 export default AllStoriesList
 
 AllStoriesList.propType = {
-  allStories: PropTypes.array
+  stories: PropTypes.array
 }
