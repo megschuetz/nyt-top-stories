@@ -8,7 +8,7 @@ function FilterBtns() {
   
   const sectionsLinks = sections.map((section) => {
     return (
-      <NavLink to={`/section/${section}`} style={{textDecoration: 'none', color: 'black'}} key={section}><p className='section-name'>{section}</p></NavLink>
+      <NavLink to={`/section/${section}`} style={{textDecoration: 'none', color: 'black'}} key={section}><button className='section-name'>{section}</button></NavLink>
     )
   })
   

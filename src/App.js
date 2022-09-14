@@ -7,6 +7,7 @@ import Error from './Error'
 import FilterBtns from './FilterBtns.js'
 import { Route } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { getDefaultNormalizer } from '@testing-library/react';
 
 function App() {
 
@@ -14,8 +15,9 @@ function App() {
   const [sectionStories, setSectionStories] = useState('home')
   const [error, setError] = useState('')
 
+
+
   useEffect(() => {
-    console.log('rendered')
     fetchResponse(sectionStories)
       .then(data => setAllStories(data.results))
       .catch(error => setError(error))
@@ -44,7 +46,6 @@ function App() {
             </div>
           )
         }}/>
-          
         
         <Route exact path="/:published_date" render={({ match }) => {
           console.log('here')
