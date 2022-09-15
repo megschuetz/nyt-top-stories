@@ -1,0 +1,25 @@
+.filters-section {
+  display: flex;
+  justify-content: center;
+}
+
+.section-name {
+  text-transform: capitalize;
+  padding: 12px;
+  border: solid black 2px;
+  border-radius: 15px;
+  margin: 3px 5px;
+}
+
+.section-name:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 70vw;
+  margin: 3% 10%;
+}
