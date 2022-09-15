@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './App.css';
-import { topStories, fetchResponse } from './apiCalls'
+import { fetchResponse } from './apiCalls'
 import AllStoriesList from './AllStoriesList'
 import Details from './Details'
 import Error from './Error'
 import FilterBtns from './FilterBtns.js'
 import { Route } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { getDefaultNormalizer } from '@testing-library/react';
 
 function App() {
 
@@ -15,12 +14,10 @@ function App() {
   const [sectionStories, setSectionStories] = useState('home')
   const [error, setError] = useState('')
 
-
-
   useEffect(() => {
     fetchResponse(sectionStories)
-      .then(data => setAllStories(data.results))
-      .catch(error => setError(error))
+        .then(data => setAllStories(data.results))
+        .catch(error => setError(error))
   }, [sectionStories])
 
 
@@ -41,7 +38,7 @@ function App() {
           setSectionStories(match.params.section)
           return (
             <div>
-              <FilterBtns />
+          <FilterBtns />
               {allStories && <AllStoriesList stories={allStories}/>}
             </div>
           )

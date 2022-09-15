@@ -10,6 +10,5 @@ const fetchResponse = (section) => {
   )
 } 
 
-const topStories = fetchResponse('home')
 
-export { topStories, fetchResponse }
+export { fetchResponse }
